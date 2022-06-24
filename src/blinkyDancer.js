@@ -20,6 +20,8 @@
 
 var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('blinkyDancer');
+  this.setStyle();
 };
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
@@ -27,5 +29,22 @@ MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
 
 MakeBlinkyDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
-  this.$node.toggle();
+  //this.$node.toggle();
+  this.$node.animate({
+    'border-width': '30px',
+    'border-radius': '30px'
+  }, 'slow');
+  this.$node.animate({
+    'border-width': '2px',
+    'border-radius': '2px'
+  }, 'slow');
+};
+
+MakeBlinkyDancer.prototype.setStyle = function() {
+  var style = {
+    'border': '10px solid yellow',
+    'border-radius': '10px',
+    'position': 'absolute'
+  };
+  this.$node.css(style);
 };

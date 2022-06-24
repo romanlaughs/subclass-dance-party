@@ -1,6 +1,8 @@
 $(document).ready(function() {
   window.dancers = [];
-
+  var lined = false;
+  var blingLeft = 0;
+  var superLeft = 0;
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -15,11 +17,18 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
+    if (lined) {
+      if ($('dancer')) {
+        $('.dancer').css('left', Math.random() * 500);
+      }
+      if ($('.popDancer')) {
+        $('.popDancer').css('animation', 'move 2s linear infinite');
+      }
+      lined = false;
+    }
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-    console.log(dancerMakerFunctionName);
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
@@ -27,12 +36,13 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
 
-    $('#lineUpButton').on('click', function(event) {
-      $('#dancer').css({'padding-left': 0});
-    });
-
+  $('.lineUpButton').on('click', function(event) {
+    lined = true;
+    $('.dancer').css({'left': 0});
+    $('.popDancer').css('animation', 'null');
   });
 });
-
