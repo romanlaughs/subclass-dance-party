@@ -38,6 +38,7 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+
   });
 
   $('.lineUpButton').on('click', function(event) {

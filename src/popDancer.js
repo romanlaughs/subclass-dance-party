@@ -1,7 +1,7 @@
 var MakePopDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('popDancer');
- // this.setStyle();
+  // this.setStyle();
 };
 
 MakePopDancer.prototype = Object.create(MakeDancer.prototype);

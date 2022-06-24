@@ -31,18 +31,18 @@ MakeBlinkyDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
   //this.$node.toggle();
   this.$node.animate({
-    'border-width': '30px',
-    'border-radius': '30px'
+    'border-width': '15px',
+    'border-radius': '15px'
   }, 'slow');
   this.$node.animate({
-    'border-width': '2px',
-    'border-radius': '2px'
+    'border-width': '1px',
+    'border-radius': '1px'
   }, 'slow');
 };
 
 MakeBlinkyDancer.prototype.setStyle = function() {
   var style = {
-    'border': '10px solid yellow',
+    'border': '10px solid gold',
     'border-radius': '10px',
     'position': 'absolute'
   };
