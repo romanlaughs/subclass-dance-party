@@ -21,11 +21,11 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-/* .dancer{
+.dancer{
   border:10px;
   border-radius:10px;
   position:absolute;
-} */
+}
 
 .superHero{
   animation:spin 4s linear infinite;
@@ -33,6 +33,7 @@ body, a:link, a:visited, a:active{
   border: 20px solid white;
   border-radius: 0px;
 }
+
 
 @keyframes spin {
   100% {
@@ -50,6 +51,8 @@ body, a:link, a:visited, a:active{
   border-bottom: 60px solid powderblue;
   position: absolute;
 }
+
+
 
 @keyframes move {
   0% {left: 0;}
