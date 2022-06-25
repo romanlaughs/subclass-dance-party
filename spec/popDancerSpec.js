@@ -10,6 +10,7 @@ describe('popDancer', function() {
 
   it('should have a jQuery $node object', function() {
     expect(popDancer.$node).to.be.an.instanceof(jQuery);
+
   });
 
 });
