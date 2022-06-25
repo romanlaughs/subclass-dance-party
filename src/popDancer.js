@@ -25,18 +25,3 @@ MakePopDancer.prototype.step = function() {
   // }, 2000, 'swing');
 
 };
-
-
-// MakePopDancer.prototype.setStyle = function() {
-//   var style = {
-//     'width': 0,
-//     'height': 0,
-//     'border-left': '30px solid transparent',
-//     'border-right': '30px solid transparent',
-//     'border-bottom': '60px solid blue',
-//     'position': 'absolute'
-//   };
-//   this.$node.css(style);
-// };
-
-

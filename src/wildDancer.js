@@ -62,4 +62,3 @@ MakeWildDancer.prototype.min = function(object) {
   }
   return result;
 };
-
