@@ -1,9 +1,11 @@
 body, html{
   height:100%;
-  background-image: url("./bcgpic.jpeg");
+
 }
 body{
   margin: 0px;
+  background-image: url("./bcgpic.jpeg");
+  background-position: center;
   background-color:#444;
   font-size: 18px;
 }
@@ -21,19 +23,31 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+/* .dancer{
   border:10px;
   border-radius:10px;
   position:absolute;
+} */
+.wildDancer{
+  color: greenyellow;
+  border: 30px solid;
+  position: absolute;
+}
+
+.blinkyDancer{
+  color: gold;
+  border: 10px solid gold;
+  border-radius: 10px;
+  position: absolute;
 }
 
 .superHero{
+  color: rgb(255, 255, 255);
   animation:spin 4s linear infinite;
   position: absolute;
-  border: 20px solid white;
+  border: 20px solid;
   border-radius: 0px;
 }
-
 
 @keyframes spin {
   100% {
@@ -43,6 +57,7 @@ body, a:link, a:visited, a:active{
 }
 
 .popDancer{
+  color: powderblue;
   animation: move 2s linear infinite;
   width: 0;
   height: 0;
@@ -52,9 +67,8 @@ body, a:link, a:visited, a:active{
   position: absolute;
 }
 
-
-
 @keyframes move {
-  0% {left: 0;}
-  100% {left: 100%;}
+  0% {left: 10%;}
+  100% {left: 80%;}
 }
+

@@ -1,37 +1,42 @@
-$(document).ready(function() {
-  window.dancers = [];
-  $('.addDancerButton').on('click', function(event) {
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-    var dancerMakerFunction = window[dancerMakerFunctionName];
-
-
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
-    window.dancers.push(dancer);
-    $('body').append(dancer.$node);
+var MakePopDancer = function(top, left, timeBetweenSteps) {
+  MakeDancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('popDancer');
+  this.name = 'popDancer';
+  var $pop = this.$node;
+  this.$node.mouseover(function() {
+    $pop.css('border-bottom', '60px solid brown');
   });
-
-
-
-  $('.lineUpButton').on('click', function(event) {
-    if ($('.lineUpButton').text() === 'line up dancers') {
-      $('.popDancer').css('animation', 'null');
-      window.dancers.forEach(function(dancer) {
-        dancer.lineup();
-      });
-      $('.lineUpButton').text('recess lined up dancers');
-    } else {
-      $('.popDancer').css('animation', 'move 2s linear infinite');
-      window.dancers.forEach(function(dancer) {
-        dancer.unlineup();
-      });
-      $('.lineUpButton').text('line up dancers');
-    }
+  this.$node.mouseleave(function() {
+    $pop.css('border-bottom', '60px solid powderblue');
   });
+};
 
 
+MakePopDancer.prototype = Object.create(MakeDancer.prototype);
+MakePopDancer.prototype.constructor = MakePopDancer;
 
-});
+MakePopDancer.prototype.step = function() {
+  MakeDancer.prototype.step.call(this);
+  // this.$node.animate({
+  //   'left': '100%'
+  // }, 2000, 'swing');
+  // this.$node.animate({
+  //   'left': '0px'
+  // }, 2000, 'swing');
+
+};
+
+
+// MakePopDancer.prototype.setStyle = function() {
+//   var style = {
+//     'width': 0,
+//     'height': 0,
+//     'border-left': '30px solid transparent',
+//     'border-right': '30px solid transparent',
+//     'border-bottom': '60px solid blue',
+//     'position': 'absolute'
+//   };
+//   this.$node.css(style);
+// };
+
+

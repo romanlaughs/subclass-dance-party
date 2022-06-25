@@ -2,6 +2,7 @@ var MakeSuperHeroDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('superHero');
   var $hero = this.$node;
+  this.name = 'superHero';
   this.$node.mouseover(function() {
     $hero.css('border-color', 'orange');
   });
@@ -15,5 +16,4 @@ MakeSuperHeroDancer.prototype.constructor = MakeSuperHeroDancer;
 
 MakeSuperHeroDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
-
 };
